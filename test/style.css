@@ -43,6 +43,7 @@ textarea {
     overflow        : auto;
     overflow-wrap   : normal;
     white-space     : pre;
+    tab-size        : 4;
 }
 
 textarea::selection {
@@ -62,4 +63,5 @@ textarea::selection {
     overflow        : hidden;
     word-break      : break-all;
     font            : 1rem "Cascadia Code", monospace;
+    tab-size        : 4;
 }

@@ -31,7 +31,7 @@ hljs.registerLanguage("urcl", function() {
             { scope: "string"   , begin: "('|\")"       , end: "('|\")" , illegal: "\\n", contains: [ hljs.BACKSLASH_ESCAPE ] },
             {
                 className: 'keyword',
-                begin: KEYWORDS.join("|") + "(?=\\s)"
+                begin: "(" + KEYWORDS.join("|") + ")(?=\\s)"
             },
         ]
     }
