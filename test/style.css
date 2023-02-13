@@ -23,7 +23,9 @@ body > div {
     width           : 80%;
     height          : 80%;
     margin          : 0;
-    padding         : 0;
+    padding         : 1rem;
+    border-radius   : 10px;
+    background-color: #222;
 }
 
 textarea {
@@ -36,7 +38,7 @@ textarea {
     outline         : 0;
     border          : 0;
     color           : transparent;
-    background-color: #222;
+    background-color: transparent;
     caret-color     : white;
     overflow        : auto;
     overflow-wrap   : normal;
