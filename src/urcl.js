@@ -26,7 +26,7 @@ export function get_urcl() {
             },
             { scope: "meta"     , begin: "@[A-Za-z]+", end: "[\\s]"     },
             { scope: "meta"     , begin: "(minreg|minheap|bits)"        },
-            { scope: "built_in" , begin: "(\\$|\\#|r|m)[0-9]+"          },
+            { scope: "built_in" , begin: "((\\$|\\#|r|m)[0-9]+|pc|sp)"  },
             { scope: "symbol"   , begin: "\\.[^\\s]+"                   },
             { scope: "literal"  , begin: "%[A-Za-z0-9]+"                },
             {
