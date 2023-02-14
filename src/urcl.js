@@ -25,6 +25,7 @@ export function get_urcl() {
                 begin: "(\\+|\\-)?(0[xX][A-Fa-f0-9]+|0[bB][0-1]+|0[oO][0-7]+|[0-9]+)"
             },
             { scope: "meta"     , begin: "@[A-Za-z]+", end: "[\\s]"     },
+            { scope: "meta"     , begin: "(minreg|minheap|bits)"        },
             { scope: "built_in" , begin: "(\\$|\\#|r|m)[0-9]+"          },
             { scope: "symbol"   , begin: "\\.[^\\s]+"                   },
             { scope: "literal"  , begin: "%[A-Za-z0-9]+"                },
@@ -42,8 +43,12 @@ export function get_urcl() {
                 ],
             },
             {
-                scope: 'keyword',
+                scope: "keyword",
                 begin: "(" + KEYWORDS.join("|") + ")"
+            },
+            {
+                scope: "name",
+                begin: "[A-Za-z0-9_]+"
             },
         ]
     }
