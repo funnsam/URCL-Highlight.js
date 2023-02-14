@@ -35,8 +35,8 @@ hljs.registerLanguage("urcl", function() {
                         contains: [ hljs.BACKSLASH_ESCAPE ]
                     },
                     {
-                        begin: "'(" + hljs.BACKSLASH_ESCAPES + "|.)",
-                        end: "'", illegal: "."
+                        begin: "'", end: "'", illegal: "\\n",
+                        contains: [ hljs.BACKSLASH_ESCAPE ]
                     }
                 ],
             },
@@ -47,4 +47,3 @@ hljs.registerLanguage("urcl", function() {
         ]
     }
 });
-console.log(hljs.listLanguages());
