@@ -19,18 +19,26 @@ hljs.registerLanguage("urcl", function() {
         contains: [
             hljs.C_LINE_COMMENT_MODE,
             hljs.C_BLOCK_COMMENT_MODE,
-            { scope: "number"   , begin: "0x[0-9abcdef]+"               },
-            { scope: "number"   , begin: "0b[01]+"                      },
-            { scope: "number"   , begin: "0o[0234567]+"                 },
-            { scope: "number"   , begin: "[0-9]+"                       },
-            { scope: "comment"  , begin: "//"           , end: "\n"     },
+            { scope: "number"   , begin: "(\\+|\\-)?(0[xX][A-Fa-f0-9]+|0[bB][0-1]+|0[oO][0-7]+|[0-9]+)"               },
             { scope: "meta"     , begin: "@[A-Za-z]+"   , end: "[\\s]"  },
             { scope: "built_in" , begin: "(\\$|\\#|r|m)[0-9]+"          },
-            { scope: "symbol"   , begin: "\\.[A-Za-z0-9]+"              },
+            { scope: "symbol"   , begin: "\\.[^\\s]+"              },
             { scope: "literal"  , begin: "%[A-Za-z0-9]+"                },
-            { scope: "string"   , begin: "('|\")"       , end: "('|\")" , illegal: "\\n", contains: [ hljs.BACKSLASH_ESCAPE ] },
             {
-                className: 'keyword',
+                scope: "string",
+                variants: [
+                    {
+                        begin: "\"", end: "\"", illegal: "\\n",
+                        contains: [ hljs.BACKSLASH_ESCAPE ]
+                    },
+                    {
+                        begin: "'(" + hljs.BACKSLASH_ESCAPES + "|.)",
+                        end: "'", illegal: "."
+                    }
+                ],
+            },
+            {
+                scope: 'keyword',
                 begin: "(" + KEYWORDS.join("|") + ")(?=\\s)"
             },
         ]
