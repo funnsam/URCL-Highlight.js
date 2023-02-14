@@ -44,11 +44,11 @@ export function get_urcl() {
             },
             {
                 scope: "keyword",
-                begin: "(" + KEYWORDS.join("|") + ")\s"
+                begin: "(" + KEYWORDS.join("|") + ")\\s",
             },
             {
                 scope: "name",
-                begin: "[A-Za-z0-9_]+"
+                begin: "[A-Za-z0-9_]+",
             },
         ]
     }
