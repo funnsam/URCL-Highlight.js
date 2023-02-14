@@ -1,12 +1,29 @@
-/*
-Language: URCL
-Author: funnsam
-Description: URCL Highlighting
-*/
+/**
+ * @name URCL_Highlighting
+ * @author funnsam
+ * @description Highlight.js custom language
+ * @version 0.1.0
+ */
 
-// hljs.registerLanguage("urcl", function() {
-export function get_urcl() {
-        const KEYWORDS = [
+// BIG TODO!
+
+module.exports = class URCL_Highlighting {
+    start() {
+        // BdApi.showToast(monaco.languages.getLanguages());
+
+        monaco.languages.register({
+            id: "urcl",
+            extensions: [".urcl"],
+            aliases: ["urcl"]
+        });
+        monaco.languages.setMonarchTokensProvider("urcl", get_urcl());
+    } 
+
+    stop() {}
+}
+
+function get_urcl(hljs) {
+    const KEYWORDS = [
         "add", "rsh", "lod", "str", "bge", "nor", "sub", "jmp", "mov", "nop", "imm", "lsh", "inc", "dec",
         "neg", "and", "or" , "not","xnor", "xor","nand", "brl", "brg", "bre", "bne", "bod", "bev", "ble",
         "brz", "bnz", "brn", "brp", "psh", "pop", "cal", "ret", "hlt", "cpy", "brc", "bnc", "mlt", "div",

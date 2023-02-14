@@ -5,8 +5,8 @@ html, body {
     padding         : 0;
     height          : 100%;
     width           : 100%;
-    background-color: #151515;
     color           : white;
+    background      : linear-gradient(to bottom, #e96443, #904e95);
     overflow        : hidden;
 }
 
@@ -25,7 +25,9 @@ body > div {
     margin          : 0;
     padding         : 1rem;
     border-radius   : 10px;
-    background-color: #222;
+    background-color: #1818187f;
+    backdrop-filter : blur(10px);
+    box-shadow      : 0 4px 30px #0000007f;
 }
 
 textarea {
@@ -48,7 +50,7 @@ textarea {
 
 textarea::selection {
     color           : transparent;
-    background-color: #1b446b;
+    background-color: #2e6eaa9f;
 }
 
 #hl_box {

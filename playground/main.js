@@ -1,4 +1,8 @@
+import { get_urcl } from "../src/urcl.js";
+
 document.addEventListener("DOMContentLoaded", (_) => {
+    hljs.registerLanguage("urcl", get_urcl);
+
     let input       = document.getElementById("input");
     let hl_box      = document.getElementById("hl_box");
 
@@ -14,7 +18,7 @@ document.addEventListener("DOMContentLoaded", (_) => {
     };
     input.onscroll = (_) => {
         hl_box.scrollTo(input.scrollLeft, input.scrollTop);
-    }
+    };
     highlight();
     
     function highlight() {
