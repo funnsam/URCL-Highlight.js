@@ -22,6 +22,6 @@ document.addEventListener("DOMContentLoaded", (_) => {
     highlight();
     
     function highlight() {
-        hl_box.innerHTML = hljs.highlight(input.value, {language: "urcl"}).value;
+        hl_box.innerHTML = hljs.highlight(input.value+"\n", {language: "urcl"}).value;
     }
 })

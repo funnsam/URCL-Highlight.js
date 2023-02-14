@@ -44,7 +44,7 @@ export function get_urcl() {
             },
             {
                 scope: "keyword",
-                begin: "(" + KEYWORDS.join("|") + ")"
+                begin: "(" + KEYWORDS.join("|") + ")\s"
             },
             {
                 scope: "name",
